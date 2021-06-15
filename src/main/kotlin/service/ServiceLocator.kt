@@ -1,7 +1,6 @@
 package service
 
 import module.Module
-import toService
 import java.util.concurrent.ConcurrentHashMap
 import kotlin.reflect.KClass
 
@@ -22,7 +21,7 @@ class ServiceLocator {
     }
 
     private fun registerModule(module: Module) {
-        module.declarationRegistry.forEach {
+        module.instanceRegistry.forEach {
             addService(it.value.toService())
         }
     }

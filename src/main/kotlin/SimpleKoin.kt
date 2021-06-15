@@ -1,16 +1,17 @@
 import context.SimpleKoinContext
+import dsl.instanceRegistry
+import factory.InstanceFactory
 import module.Module
-import module.declarationRegistry
 import service.ServiceLocator
 import kotlin.reflect.KClass
 
 class SimpleKoin {
 
     private val registry = ServiceLocator()
-    lateinit var declarations: Map<KClass<*>, Declaration<Any>>
+    lateinit var instanceList: Map<KClass<*>, InstanceFactory<*>>
 
     fun loadModules(modules: List<Module>) {
-        declarations = modules.declarationRegistry
+        instanceList = modules.instanceRegistry
         registry.loadModules(modules)
     }
 
@@ -22,7 +23,9 @@ fun getSimpleKoin() = SimpleKoinContext.getSimpleKoin()
 
 inline fun <reified T: Any> get(): T {
     val service = getSimpleKoin().resolveInstance(T::class)
-    return service.instance as T
+    return service.factory.get() as T
 }
 
 inline fun <reified T: Any> inject(): Lazy<T> = lazy { get() }
+
+typealias Declaration<T> = () -> T
