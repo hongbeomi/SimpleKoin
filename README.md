@@ -1,6 +1,6 @@
-# SimpleKoin
-Simple version Koin
+# SimpleKoin 🪙
+Let's simply implement a [Koin](https://github.com/InsertKoinIO/koin) library famous for its DI library that uses [Service Locator patterns](https://en.wikipedia.org/wiki/Service_locator_pattern).
 
 ### TODO
-- [ ] `single` 기능 구현하기
-- [ ] `inject`나 `get`에서 `parameter` 주입 가능하도록 구현하기
+- [x] implement `single` function
+- [ ] implement `parameterOf` function
