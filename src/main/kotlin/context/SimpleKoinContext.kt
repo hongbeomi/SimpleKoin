@@ -12,6 +12,7 @@ object SimpleKoinContext {
     }
 
     fun getSimpleKoin() = simpleKoin
+
 }
 
 fun startSimpleKoin(block: SimpleKoinContext.() -> Unit) = SimpleKoinContext.apply(block)
