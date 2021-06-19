@@ -11,5 +11,5 @@ val useCaseModule = module {
 }
 
 val repositoryModule = module {
-    single { MockRepository() }
+    single<MockRepository> { MockRepositoryImpl() }
 }
