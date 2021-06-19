@@ -38,3 +38,10 @@ class Module {
 }
 
 operator fun List<Module>.plus(module: Module) = this + listOf(module)
+
+fun module(block: Module.() -> Unit) = Module().apply(block)
+
+val List<Module>.instanceRegistry: Map<KClass<*>, InstanceFactory<*>>
+    get() = this.fold(this[0].instanceRegistry) { acc, module ->
+        (acc + module.instanceRegistry) as MutableMap<KClass<*>, InstanceFactory<*>>
+    }

@@ -1,6 +1,6 @@
 package mock
 
-import dsl.module
+import module.module
 
 val viewModelModule = module {
     factory { MockViewModel(get()) }

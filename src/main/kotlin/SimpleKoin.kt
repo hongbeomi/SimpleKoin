@@ -1,7 +1,7 @@
 import context.SimpleKoinContext
-import dsl.instanceRegistry
 import factory.InstanceFactory
 import module.Module
+import module.instanceRegistry
 import service.ServiceLocator
 import kotlin.reflect.KClass
 
