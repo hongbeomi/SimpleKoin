@@ -4,9 +4,7 @@ Let's simply implement a [Koin](https://github.com/InsertKoinIO/koin) library fa
 
 ## 🖼 Diagrams
 
-
-
-
+![diagram](https://github.com/hongbeomi/SimpleKoin/blob/master/diagrams.png)
 
 ## 👇 Original Version Project
 
